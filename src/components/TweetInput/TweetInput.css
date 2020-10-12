@@ -31,9 +31,24 @@
     color: rgb(74,86,97);
 }
 
+.MuiInputBase-root textarea:focus {
+    color: white;
+}
+
 .submit-tweet-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 125px;
+}
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.attachment-image {
+    max-width: 100%;
+    max-height: 300px;
 }

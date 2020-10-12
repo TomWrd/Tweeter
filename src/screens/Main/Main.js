@@ -8,7 +8,6 @@ import TwitterCard from '../../components/TwitterCard/TwitterCard';
 const Main = (props) => {
 
     const tweet = useSelector(state => state.twittercard.tweet);
-    console.log("Rendering tweet: " + JSON.stringify(tweet));
     return (
         <div>
             <div className="tweet-input-wrapper">

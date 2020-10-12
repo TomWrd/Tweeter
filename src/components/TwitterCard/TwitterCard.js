@@ -8,7 +8,6 @@ import { BsDot } from 'react-icons/bs';
 const TwitterCard = (props) => {
     
     const tweet = props.tweet;
-    console.log("Tweet recieved: " + JSON.stringify(tweet));    
     return (
         <div className="tweet-card-container">
             {

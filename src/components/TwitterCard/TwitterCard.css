@@ -15,7 +15,7 @@
 }
 
 .card-interactions-wrapper :hover {
-    color: rgb(56,129,140);
+    color: white;
     cursor: pointer;
 }
 
@@ -51,8 +51,7 @@
 }
 
 .card-content-wrapper {
-    display: flex;
-    justify-content: flex-start;
+    text-align: left;
     padding: 3vh;
     color: white;
 }
@@ -86,9 +85,33 @@
 .card-interactions-wrapper :hover svg {
     background-color: rgba(56,129,140, .3);
     border-radius: 100%;
+    color:white;
+}
+
+.options-wrapper svg {
+    padding: 2vh;
+}
+
+.options-wrapper svg:hover{
+    background-color: rgba(56,129,140, .3);
+    border-radius: 100%;
+    color:white;
+    overflow:overlay;
+}
+
+.card-attachment {
+    max-width: 100%;
+    max-height: 300px;
 }
 
 .tweet-card-container {
     max-width: 600px;
     padding: 10px;
+}
+
+
+.card-attachment-wrapper  {
+    text-align: left;
+    align-items: center;
+    margin-top: 2vh;
 }
