@@ -1,0 +1,94 @@
+.tweet-card-wrapper {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-interactions-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2vh;
+    align-items: center;
+    color: rgb(74,86,97);
+}
+
+.card-interactions-wrapper :hover {
+    color: rgb(56,129,140);
+    cursor: pointer;
+}
+
+.card-interactions-wrapper svg {
+    padding: 2vh;
+    overflow: overlay;
+}
+
+.comments-wrapper, .retweets-wrapper, .hearts-wrapper, .share-wrapper {
+    font-size: 18px;
+    display: flex;
+}
+
+.interaction-count {
+    padding: 2vh;
+}
+
+.card-left-wrapper {
+    width: 20%;
+}
+
+.card-right-wrapper {
+    width: 80%;
+}
+
+.card-details-wrapper {
+    display: flex;
+}
+
+.tweet-details-wrapper {
+    text-align:left;
+    padding: 1vh;
+}
+
+.card-content-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    padding: 3vh;
+    color: white;
+}
+
+.author-name {
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 1vh;
+}
+
+.author-username {
+    padding: 1vh;
+}
+
+.dot-divider {
+    padding: 1vh;
+}
+
+.post-date-wrapper {
+    padding: 1vh;
+}
+
+.card-profile-picture {
+    width: calc(100% - 4vh);
+    border-radius: 100%;
+    overflow: hidden;
+    margin: 2vh;
+}
+
+.card-interactions-wrapper :hover svg {
+    background-color: rgba(56,129,140, .3);
+    border-radius: 100%;
+}
+
+.tweet-card-container {
+    max-width: 600px;
+    padding: 10px;
+}

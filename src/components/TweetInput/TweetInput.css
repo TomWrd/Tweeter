@@ -1,0 +1,39 @@
+.tweet-input-wrapper {
+    max-width: 600px;
+    margin: auto;
+    padding: 10px;
+    margin-top: 50px;
+}
+
+.tweet-input-wrapper .MuiTextField-root {
+    width:100%;   
+}
+
+.MuiInputBase-root ::before {
+    border-bottom: 1px solid rgba(0,0,255,.8);
+}
+.MuiInputBase-root ::after {
+    border-bottom: 3px solid rgba(0,0,255, .8);
+}
+
+.actions-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.options-wrapper {
+    display: flex;
+    padding: 3vh;
+    justify-content: space-between;
+}
+
+.MuiInputBase-root textarea {
+    color: rgb(74,86,97);
+}
+
+.submit-tweet-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 125px;
+}
