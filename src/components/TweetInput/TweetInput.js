@@ -11,13 +11,16 @@ import * as actions from '../../store/actions/twittercard';
 import axios from 'axios';
 import Dropzone from 'react-dropzone'
 import {BounceLoader} from 'react-spinners';
-
+import { Observable } from 'rxjs';
+ 
+ 
 const TweetInput = (props) => {
     const dispatch = useDispatch();
     const [tweetText, setTweetText] = useState("");
     const [tweetImage, setTweetImage] = useState();
     const [imageUploading, setImageUploading] = useState(false);
     const [displayUploader, setDisplayUploader] = useState(false);
+    var formData = new FormData();
     
     const submitTweet = async () => {
         var cardDetails = {
@@ -34,17 +37,28 @@ const TweetInput = (props) => {
         setTweetText(text.substring(0,279));
     }
 
+    const observable = new Observable(subscriber => {
+        console.log("Posting form data: " + JSON.stringify(formData));
+        axios.post('/UploadImage', formData)
+        .then(response => {
+            subscriber.next(response.data.file);
+            subscriber.complete();
+        })
+      });
+
     const handleUploadImage = (acceptedFiles) => {
         var file = acceptedFiles[0];
 
-        var formData = new FormData();            
-        formData.append('tweetImage', file);
+        var fd = new FormData();            
+        fd.append('tweetImage', file);
+        formData = fd;
         setImageUploading(true);
-        axios.post('/UploadImage', formData)
-             .then(response => {
-                 setTweetImage(response.data.file);
-                 setImageUploading(false);
-                })
+        observable.subscribe({
+            next(x) { setTweetImage(x); console.log('Responded with:  ' + x); },
+            error(err) { console.error('something wrong occurred: ' + err); },
+            complete() { console.log('done'); }
+          });
+        setImageUploading(false);
     }
     
     var charactersRemaining = 280 - tweetText.length;

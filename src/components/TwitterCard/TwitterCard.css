@@ -101,7 +101,6 @@
 
 .card-attachment {
     max-width: 100%;
-    max-height: 300px;
 }
 
 .tweet-card-container {
@@ -110,8 +109,12 @@
 }
 
 
-.card-attachment-wrapper  {
+.card-attachment-wrapper {
     text-align: left;
-    align-items: center;
     margin-top: 2vh;
+    max-height: 300px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
