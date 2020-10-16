@@ -37,7 +37,7 @@ const TweetInput = (props) => {
         setTweetText(text.substring(0,279));
     }
 
-    const observable = new Observable(subscriber => {
+    const observable$ = new Observable(subscriber => {
         console.log("Posting form data: " + JSON.stringify(formData));
         axios.post('/UploadImage', formData)
         .then(response => {
@@ -53,7 +53,7 @@ const TweetInput = (props) => {
         fd.append('tweetImage', file);
         formData = fd;
         setImageUploading(true);
-        observable.subscribe({
+        observable$.subscribe({
             next(x) { setTweetImage(x); console.log('Responded with:  ' + x); },
             error(err) { console.error('something wrong occurred: ' + err); },
             complete() { console.log('done'); }
