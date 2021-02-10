@@ -5,6 +5,6 @@ This project was built with React, Express, NodeJs, nginx, RxJs (Observables) & 
 
 ## Available Scripts
 
-docker-compose up --build
+docker-compose up --build <br /> <br />
 The client can be run independently (NOTE: Image uploads will not work) - cd client && npm start
 
